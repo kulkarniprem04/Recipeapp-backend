@@ -5,6 +5,7 @@ const Mongo_uri = require("./default").Mongo_uri;
 
 const RecipeRouter = require("./routes/Recipe");
 const RegisterRouter = require("./routes/Register");
+const LoginRouter = require("./routes/Login");
 
 mongoose
   .connect(Mongo_uri, {
@@ -23,6 +24,7 @@ app.use(cors());
 
 app.use("/api/recipes", RecipeRouter);
 app.use("/api/register", RegisterRouter);
+app.use("/api/login", LoginRouter);
 
 app.get("/api/", (req, res) => {
   res.json("it is working");
